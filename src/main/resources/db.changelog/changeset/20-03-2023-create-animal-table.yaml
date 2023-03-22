@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0
+      author: Daniil.Dimitrov
+      failOnError: true
+      changes:
+        - createSequence:
+            sequenceName: hibernate_sequence_animal
+            incrementBy: 1
+            cycle: false
+            cacheSize: 1
+            minValue: 1
+            startValue: 6
+  - changeSet:
+      id: 1
+      author: Daniil.Dimitrov
+      changes:
+        - createTable:
+            tableName: animals
+            columns:
+              - column:
+                  name: animal_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: animal_name
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: animal_kind
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: predator
+                  type: boolean
+                  constraints:
+                    nullable: false

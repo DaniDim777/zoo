@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0
+      author: Daniil.Dimitrov
+      failOnError: true
+      changes:
+        - createSequence:
+            sequenceName: hibernate_sequence_food
+            incrementBy: 1
+            cycle: false
+            cacheSize: 1
+            minValue: 1
+            startValue: 17
+  - changeSet:
+      id: 1
+      author: Daniil.Dimitrov
+      changes:
+        - createTable:
+            tableName: foods
+            columns:
+              - column:
+                  name: food_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: food_name
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: food_type
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: current_quantity
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: measure
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: animal_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: animal_food_fk
+                    referencedTableName: animals
+                    referencedColumnNames: animal_id
+              - column:
+                  name: consumption
+                  type: bigint

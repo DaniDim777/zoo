@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db.changelog/changeset/20-03-2023-create-animal-table.yaml
+  - include:
+      file: classpath:/db.changelog/changeset/20-03-2023-insert-into-animal-table.yaml
+  - include:
+      file: classpath:/db.changelog/changeset/20-03-2023-create-food-table.yaml
+  - include:
+      file: classpath:/db.changelog/changeset/20-03-2023-insert-into-food-table.yaml

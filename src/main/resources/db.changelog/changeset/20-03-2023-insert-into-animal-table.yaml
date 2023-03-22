@@ -1,0 +1,82 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20032023-1-1
+      author: Daniil.Dimitrov
+      comment: "Insert data into table animals"
+      changes:
+        - insert:
+            tableName: animals
+            columns:
+              - column:
+                  name: animal_id
+                  value: 1
+              - column:
+                  name: animal_name
+                  value: "Monkey"
+              - column:
+                  name: animal_kind
+                  value: "Mammal"
+              - column:
+                  name: predator
+                  value: false
+        - insert:
+            tableName: animals
+            columns:
+              - column:
+                  name: animal_id
+                  value: 2
+              - column:
+                  name: animal_name
+                  value: "Hare"
+              - column:
+                  name: animal_kind
+                  value: "Mammal"
+              - column:
+                  name: predator
+                  value: false
+        - insert:
+            tableName: animals
+            columns:
+              - column:
+                  name: animal_id
+                  value: 3
+              - column:
+                  name: animal_name
+                  value: "Eagle"
+              - column:
+                  name: animal_kind
+                  value: "Bird"
+              - column:
+                  name: predator
+                  value: true
+        - insert:
+            tableName: animals
+            columns:
+              - column:
+                  name: animal_id
+                  value: 4
+              - column:
+                  name: animal_name
+                  value: "Tiger"
+              - column:
+                  name: animal_kind
+                  value: "Mammal"
+              - column:
+                  name: predator
+                  value: true
+        - insert:
+            tableName: animals
+            columns:
+              - column:
+                  name: animal_id
+                  value: 5
+              - column:
+                  name: animal_name
+                  value: "Horse"
+              - column:
+                  name: animal_kind
+                  value: "Mammal"
+              - column:
+                  name: predator
+                  value: false
+
